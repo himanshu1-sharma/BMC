@@ -10,7 +10,7 @@ import { Pagination, Scrollbar } from "swiper";
 import ReactPlayer from 'react-player'
 
 
-export default function usercard({ data }) {
+export default function Usercard({ data }) {
 
     const [cardData, setCardData] = useState()
     const [active, setActive] = useState(false);
