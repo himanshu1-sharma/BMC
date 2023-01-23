@@ -686,11 +686,11 @@
 }
 
 .catalogBox .accordion-button::after {
-    background-image: url('../../img/BMC/down.png');
+    background-image: url('../public/image/BMC/down.png');
 }
 
 .catalogBox .accordion-button:not(.collapsed)::after {
-    background-image: url('../../img/BMC/up.png');
+    background-image: url('../public/image/BMC/up.png');
     transform: none;
 }
 
@@ -810,13 +810,13 @@
 }
 
 .productImgSliderDetail .accordion-button::after {
-    background-image: url('../../img/BMC/down.png');
+    background-image: url('../public/image/BMC/down.png');
     background-size: 15px;
     transform: none;
 }
 
 .productImgSliderDetail .accordion-button:not(.collapsed)::after {
-    background-image: url('../../img/BMC/up.png');
+    background-image: url('../public/image/BMC/up.png');
     background-size: 15px;
     transform: none;
 }
