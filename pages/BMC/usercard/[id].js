@@ -10,6 +10,17 @@ import { Pagination, Scrollbar } from "swiper";
 import ReactPlayer from 'react-player'
 
 
+export async function getServerSideProps({ params }) {
+    // Fetch data from an API using the id parameter
+    console.log(params.id)
+    const res = await fetch(`https://bizsapp.co.in/api/business/card/${params.id}`);
+    const data = await res.json();
+
+    return { props: { data } };
+
+
+}
+
 export default function Usercard({ data }) {
 
     const [cardData, setCardData] = useState()
@@ -73,47 +84,11 @@ export default function Usercard({ data }) {
                 <meta property="og:image:height" content="300" />
                 <meta property="og:url" content="digrowfa.com" />
             </Head>
-            <div className='container'>
-
-                <div className='row'>
-                    <div className='col-xl-6 col-lg-6'>
-                        <div className="bmcMobileHide">
-                            <div className="userCard">
-                                <div className="userCardProfile">
-                                    <img src={cardData?.brandLogo} alt={cardData?.brandName} className="img-fluid" />
-                                </div>
-                                <div className="userCardName">
-                                    <h1>{cardData?.brandName}</h1>
-                                    <p>({cardData?.designation})</p>
-                                </div>
-                            </div>
-                            <div className="bmcProfileView">View Profile Only on BizsApp Mobile App</div>
-                            <div className="bmcFooter">
-                                <h4>Download For iOS & Android</h4>
-                                {/* <div className='d-flex'>
-                                    <DownloadBtn />
-                                </div> */}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </>
     )
 };
 
 
 
-export async function getServerSideProps({ params }) {
-    // Fetch data from an API using the id parameter
-    console.log(params.id)
-    const res = await fetch(`https://bizsapp.co.in/api/business/card/${params.id}`);
-    const data = await res.json();
-
-    return { props: { data } };
-
-
-}
 
 
